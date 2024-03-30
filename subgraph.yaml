@@ -18,9 +18,6 @@ dataSources:
       entities:
         - Approval
         - MetaTransactionExecuted
-        - RoleAdminChanged
-        - RoleGranted
-        - RoleRevoked
         - Transfer
       abis:
         - name: USDT
@@ -30,12 +27,6 @@ dataSources:
           handler: handleApproval
         - event: MetaTransactionExecuted(address,address,bytes)
           handler: handleMetaTransactionExecuted
-        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
-          handler: handleRoleAdminChanged
-        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleGranted
-        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleRevoked
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
       file: ./src/usdt.ts
